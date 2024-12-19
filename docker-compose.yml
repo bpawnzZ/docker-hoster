@@ -1,8 +1,10 @@
-name: <your project name>
 services:
     dockerhoster:
         container_name: dockerhoster
         hostname: dockerhoster
+        volumes:
+            - /var/run/docker.sock:/tmp/docker.sock
+            - /etc/hosts:/tmp/hosts
         networks:
             caddy_default:
                 aliases:
