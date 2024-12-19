@@ -1,0 +1,14 @@
+name: <your project name>
+services:
+    dockerhoster:
+        container_name: dockerhoster
+        hostname: dockerhoster
+        networks:
+            caddy_default:
+                aliases:
+                    - docker.hoster
+        image: bpawnzz/dockerhoster:v1
+networks:
+    caddy_default:
+        external: true
+        name: caddy_default
